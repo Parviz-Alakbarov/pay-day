@@ -1,0 +1,22 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\ms-account",
+    "\\ms-account\\src",
+    "\\ms-account\\src\\main",
+    "\\ms-account\\src\\main\\java",
+    "\\ms-account\\src\\main\\java\\az",
+    "\\ms-account\\src\\main\\java\\az\\express",
+    "\\ms-account\\src\\main\\java\\az\\express\\account",
+    "\\ms-account\\src\\main\\java\\az\\express\\account\\mapper",
+    "\\ms-gw",
+    "\\ms-gw\\src",
+    "\\ms-gw\\src\\main",
+    "\\ms-gw\\src\\main\\java",
+    "\\ms-gw\\src\\main\\java\\az",
+    "\\ms-gw\\src\\main\\java\\az\\express",
+    "\\ms-gw\\src\\main\\java\\az\\express\\gw"
+  ],
+  "SelectedNode": "\\ms-account\\src\\main\\java\\az\\express\\account\\mapper\\AccountMapper.java",
+  "PreviewInSolutionExplorer": false
+}

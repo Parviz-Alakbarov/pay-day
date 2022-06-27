@@ -1,0 +1,3 @@
+rootProject.name = 'pay-day'
+
+include('ms-gw', 'ms-user', 'ms-order', 'ms-stock', 'ms-account', 'ms-notification')

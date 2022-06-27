@@ -1,0 +1,46 @@
+server:
+  port: 0
+
+management:
+  endpoints:
+    web:
+      base-path: /management
+      exposure:
+        include: [ "configprops", "env", "health", "info", "threaddump", "logfile", "prometheus" ]
+
+spring:
+  application:
+    name: ms-notification
+  mail:
+    host: smtp.gmail.com
+    port: 25
+    username: ${EMAIL}
+    password: ${EMAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+          starttls:
+            enable: true
+  cloud:
+    consul:
+      discovery:
+        healthCheckPath: /management/health
+        instanceId: ${spring.application.name}:${spring.application.instance-id:${random.value}}
+      config:
+        watch:
+          enabled: false
+
+    stream:
+      kafka:
+        binder:
+          brokers: ${KAFKA_URI:localhost:9092}
+      bindings:
+        notificationStateInput:
+          destination: complete_order_notification
+          contentType: application/json
+  main:
+    allow-bean-definition-overriding: true

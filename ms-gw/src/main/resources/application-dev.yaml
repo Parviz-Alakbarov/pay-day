@@ -1,0 +1,46 @@
+zuul:
+  ignoredServices: consul
+  prefix: /api
+  routes:
+    ms-order:
+      path: /order/**
+      serviceId: ms-order
+    ms-srock:
+      path: /stock/**
+      serviceId: ms-stock
+    ms-user:
+      path: /user/**
+      serviceId: ms-user
+    ms-account:
+      path: /account/**
+      serviceId: ms-account
+    ms-notification:
+      path: /notification/**
+      serviceId: ms-notification
+
+management:
+  endpoints:
+    web:
+      base-path: /management
+      exposure:
+        include: [ "configprops", "env", "health", "info", "threaddump", "logfile", "prometheus" ]
+
+spring:
+  application:
+    name: ms-gw
+  cloud:
+    consul:
+      discovery:
+        catalogServicesWatch:
+          enabled: false
+        healthCheckPath: /management/health
+        instanceId: ${spring.application.name}
+      config:
+        watch:
+          enabled: false
+  main:
+    allow-bean-definition-overriding: true
+
+server:
+  port: ${GATEWAY_PORT:8089}
+

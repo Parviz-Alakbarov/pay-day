@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    consul:
+      discovery:
+        prefer-ip-address: true
+      host: ${CONSUL_HOST:localhost}
+      port: ${CONSUL_PORT:8500}
